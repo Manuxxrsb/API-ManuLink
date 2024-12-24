@@ -1,22 +1,19 @@
 package handlers
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
-// Ping is a simple handler to test the server status
-// @Summary Ping the server
-// @Description This will return a pong message
-// @ID ping
-// @Produce  json
-// @Success 200 {string} string	"pong"
-// @Router /ping [get]
-// @Tags ping
-
-func Ping() gin.HandlerFunc {
+func Ping( db *gorm.DB ) gin.HandlerFunc {
 		return func(c *gin.Context) {
-			c.JSON(http.StatusOK, "pong")
+			dbinfo := fmt.Sprintf("%v", db)
+			c.JSON(http.StatusOK, gin.H{
+				"mensaje": "pong",
+				"bd": dbinfo,
+			})
 		}
-	}
+}
