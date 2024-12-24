@@ -23,11 +23,11 @@ jobs:
 
       - name: Create .env file from secrets
         run: |
-          echo "DB_HOST=${{ secrets.DBHOST }}" >> .env
-          echo "DB_USER=${{ secrets.DBUSER }}" >> .env
-          echo "DB_PASSWORD=${{ secrets.DBPASSWORD }}" >> .env
-          echo "DB_NAME=${{ secrets.DBNAME }}" >> .env
-          echo "DB_PORT=${{ secrets.DBPORT }}" >> .env
+          echo "DBHost=${{ secrets.DBHOST }}" >> .env
+          echo "DBUser=${{ secrets.DBUSER }}" >> .env
+          echo "DBPassword=${{ secrets.DBPASSWORD }}" >> .env
+          echo "DBName=${{ secrets.DBNAME }}" >> .env
+          echo "DBPort=${{ secrets.DBPORT }}" >> .env
 
         env:
           DBHOST: ${{ secrets.DBHOST }}
