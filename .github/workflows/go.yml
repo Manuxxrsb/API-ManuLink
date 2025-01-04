@@ -21,14 +21,6 @@ jobs:
         with:
           go-version: "1.23"
 
-      - name: echo de variables de entorno
-        run: |
-          echo "DBHost=${{ secrets.DBHOST }}" 
-          echo "DBUser=${{ secrets.DBUSER }}"
-          echo "DBPassword=${{ secrets.DBPASSWORD }}"
-          echo "DBName=${{ secrets.DBNAME }}" >> 
-          echo "DBPort=${{ secrets.DBPORT }}" >>
-
       - name: Install dependencies
         run: go mod tidy
 
