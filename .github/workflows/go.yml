@@ -29,9 +29,6 @@ jobs:
           echo "DBName=${{ secrets.DBNAME }}" >> 
           echo "DBPort=${{ secrets.DBPORT }}" >>
 
-      - name: Verifica que el archivo .env se haya creado
-        run: cat .env
-
       - name: Install dependencies
         run: go mod tidy
 
@@ -42,6 +39,9 @@ jobs:
           echo "DBPassword=${{ secrets.DBPASSWORD }}" >> .env
           echo "DBName=${{ secrets.DBNAME }}" >> .env
           echo "DBPort=${{ secrets.DBPORT }}" >> .env
+
+      - name: Verifica que el archivo .env se haya creado
+        run: cat .env
 
       - name: Run Go app
         run: go run main.go
