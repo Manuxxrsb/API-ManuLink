@@ -4,21 +4,15 @@ import (
 	"fmt"
 	"log"
 	"os"
-
-	"github.com/joho/godotenv"
 )
 
 // DBURL genera la URL de conexión a la base de datos PostgreSQL
 func DBURL() string {
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println("Error loading .env file")
-	}
 
-	log.Println("PGHOST:", os.Getenv("PGHost"))
-	log.Println("PGUSER:", os.Getenv("PGUser"))
-	log.Println("PGNAME:", os.Getenv("PGName"))
-	log.Println("PGPORT:", os.Getenv("PGPort"))
+	log.Println("HOST:", os.Getenv("PGHost"))
+	log.Println("USER:", os.Getenv("PGUser"))
+	log.Println("NAME:", os.Getenv("PGName"))
+	log.Println("PORT:", os.Getenv("PGPort"))
 
 
 	DBHost := os.Getenv("PGHost")

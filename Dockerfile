@@ -21,7 +21,7 @@ ENV PGHost=aws-0-us-west-1.pooler.supabase.com
 ENV PGPort=5432
 ENV PGUser=postgres.jfqnlhzssvesahswlcla
 ENV PGPassword=manulink2024
-ENV PGNAME=postgres
+ENV PGName=postgres
 
 # Exponer el puerto en el que la aplicación se ejecutará
 EXPOSE 8080
