@@ -14,11 +14,11 @@ func DBURL() string {
 		fmt.Println("Error loading .env file")
 	}
 
-	DBHost := os.Getenv("DBHost")
-	DBUser := os.Getenv("DBUser")
-	DBPassword := os.Getenv("DBPassword")
-	DBPort := os.Getenv("DBPort")
-	DBName := os.Getenv("DBName")
+	DBHost := os.Getenv("PGHost")
+	DBUser := os.Getenv("PGUser")
+	DBPassword := os.Getenv("PGPassword")
+	DBPort := os.Getenv("PGPort")
+	DBName := os.Getenv("PGName")
 
 	
 	return fmt.Sprintf("postgres://%s:%s@%s:%s/%s", DBUser, DBPassword, DBHost, DBPort, DBName)

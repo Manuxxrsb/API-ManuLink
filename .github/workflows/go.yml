@@ -26,11 +26,11 @@ jobs:
 
       - name: Crea un archivo .env con las variables de entorno
         run: |
-          echo "DBHost=${{ secrets.DBHOST }}" >> .env
-          echo "DBUser=${{ secrets.DBUSER }}" >> .env
-          echo "DBPassword=${{ secrets.DBPASSWORD }}" >> .env
-          echo "DBName=${{ secrets.DBNAME }}" >> .env
-          echo "DBPort=${{ secrets.DBPORT }}" >> .env
+          echo "PGHost=${{ secrets.DBHOST }}" >> .env
+          echo "PGUser=${{ secrets.DBUSER }}" >> .env
+          echo "PGPassword=${{ secrets.DBPASSWORD }}" >> .env
+          echo "PGName=${{ secrets.DBNAME }}" >> .env
+          echo "PGPort=${{ secrets.DBPORT }}" >> .env
 
       - name: Verifica que el archivo .env se haya creado
         run: cat .env
