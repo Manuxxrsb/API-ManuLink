@@ -15,10 +15,10 @@ func DBURL() string {
 		fmt.Println("Error loading .env file")
 	}
 
-	log.Println("PGHOST:", os.Getenv("PGHOST"))
-	log.Println("PGUSER:", os.Getenv("PGUSER"))
-	log.Println("PGDNAME:", os.Getenv("PGNAME"))
-	log.Println("PGPORT:", os.Getenv("PGPORT"))
+	log.Println("PGHOST:", os.Getenv("PGHost"))
+	log.Println("PGUSER:", os.Getenv("PGUser"))
+	log.Println("PGNAME:", os.Getenv("PGName"))
+	log.Println("PGPORT:", os.Getenv("PGPort"))
 
 
 	DBHost := os.Getenv("PGHost")
