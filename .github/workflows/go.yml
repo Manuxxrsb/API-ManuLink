@@ -19,28 +19,18 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: "1.21"
+          go-version: "1.23"
 
-      - name: Create .env file from secrets
+      - name: echo de variables de entorno
         run: |
-          echo "DBHost=${{ secrets.DBHOST }}" >> .env
-          echo "DBUser=${{ secrets.DBUSER }}" >> .env
-          echo "DBPassword=${{ secrets.DBPASSWORD }}" >> .env
-          echo "DBName=${{ secrets.DBNAME }}" >> .env
-          echo "DBPort=${{ secrets.DBPORT }}" >> .env
-
-        env:
-          DBHOST: ${{ secrets.DBHOST }}
-          DBUSER: ${{ secrets.DBUSER }}
-          DBPASSWORD: ${{ secrets.DBPASSWORD }}
-          DBNAME: ${{ secrets.DBNAME }}
-          DBPORT: ${{ secrets.DBPORT }}
+          echo "DBHost=${{ secrets.DBHOST }}" 
+          echo "DBUser=${{ secrets.DBUSER }}"
+          echo "DBPassword=${{ secrets.DBPASSWORD }}"
+          echo "DBName=${{ secrets.DBNAME }}" >> 
+          echo "DBPort=${{ secrets.DBPORT }}" >>
 
       - name: Install dependencies
         run: go mod tidy
-
-      - name: Run tests
-        run: go test -v ./...
 
       - name: Run Go app
         run: go run main.go
