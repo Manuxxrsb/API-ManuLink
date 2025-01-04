@@ -2,6 +2,7 @@ package config
 
 import (
 	"fmt"
+	"log"
 	"os"
 
 	"github.com/joho/godotenv"
@@ -13,6 +14,12 @@ func DBURL() string {
 	if err != nil {
 		fmt.Println("Error loading .env file")
 	}
+
+	log.Println("PGHOST:", os.Getenv("PGHOST"))
+	log.Println("PGUSER:", os.Getenv("PGUSER"))
+	log.Println("PGDNAME:", os.Getenv("PGNAME"))
+	log.Println("PGPORT:", os.Getenv("PGPORT"))
+
 
 	DBHost := os.Getenv("PGHost")
 	DBUser := os.Getenv("PGUser")
